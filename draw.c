@@ -20,9 +20,7 @@
   03/16/12 19:53:52
   jdyrlandweaver
   ====================*/
-void add_circle( struct matrix * points, 
-		 double cx, double cy, 
-		 double r, double step ) {
+void add_circle( struct matrix * points,  double cx, double cy, double r, double step ) {
 }
 
 /*======== void add_curve() ==========
