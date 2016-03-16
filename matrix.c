@@ -289,6 +289,13 @@ struct matrix * make_bezier() {
   the coefiecients for a hermite curve
   ====================*/
 struct matrix * make_hermite() {
+
+  struct matrix * m = new_matrix(4,4);
+  ident(m);
+  m->m[][];
+  m->m[][];
+  m->m[][];
+  m->m[][];
   
 }
 
@@ -308,5 +315,12 @@ struct matrix * make_hermite() {
   ====================*/
 struct matrix * generate_curve_coefs( double p1, double p2, 
 				      double p3, double p4, int type) {
+
+  struct matrix * m = new_matrix(4,4);
+  ident(m);
+  m->m[][];
+  m->m[][];
+  m->m[][];
+  m->m[][];
 }
 
