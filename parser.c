@@ -71,17 +71,19 @@ void parse_file ( char * filename,
 
   FILE *f;
   char line[256];
-  
   clear_screen(s);
-
   if ( strcmp(filename, "stdin") == 0 ) 
     f = stdin;
   else
     f = fopen(filename, "r");
-  
   while ( fgets(line, 255, f) != NULL ) {
     line[strlen(line)-1]='\0';
-    printf(":%s:\n",line);  
+    printf(":%s:\n",line);
+    //line
+     if (strcmp(line, "line") == 0) {
+      fgets(line, 255, f);
+      line[strlen(line) - 1] = '\0';
+      printf("LINE: %s\n", line);
   }
 }
 
