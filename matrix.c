@@ -302,17 +302,17 @@ struct matrix * make_hermite() {
 
   struct matrix * m = new_matrix(4,4);
   ident(m);
-  m->m[0][0] = 0;
+  m->m[0][0] = 2;
+  m->m[0][1] = -2;
+  m->m[0][2] = 1;
   m->m[0][3] = 1;
-  m->m[1][0] = 1;
-  m->m[1][2] = 1;
-  m->m[1][3] = 1;
-  m->m[3][0] = 3;
-  m->m[3][1] = 2;
-  m->m[3][2] = 1;
+  m->m[1][0] = -3;
+  m->m[1][1] = 3;
+  m->m[1][2] = -2;
+  m->m[1][3] = -1;
+  m->m[3][0] = 1;
   m->m[3][3] = 0;
   return m;
-  
 }
 
 /*======== struct matrix * generate_curve_coefs() ==========
@@ -333,10 +333,18 @@ struct matrix * generate_curve_coefs( double p1, double p2,
 				      double p3, double p4, int type) {
 
   struct matrix * m = new_matrix(4,4);
-  ident(m);
-  m->m[][];
-  m->m[][];
-  m->m[][];
-  m->m[][];
+  
+  m->m[0][0] = p1;
+  m->m[1][0] = p2;
+  m->m[2][0] = p3;
+  m->m[3][0] = p4;
+  
+  if (type == HERMITE_MODE) {
+    matrix_mult(make_hermite(),m);
+  }else{
+    matrix_mult(make_bezier(),m);
+  }
+
+  return m;
 }
 
