@@ -94,6 +94,7 @@ void parse_file ( char * filename, struct matrix * transform,
 
       add_edge(pm, atof(points[0]), atof(points[1]), atof(points[2]), atof(points[3]), atof(points[4]), atof(points[5]));
     }
+    //circle
     else if (strcmp(line, "circle") == 0) {
       fgets(line, 255, f);
       line[strlen(line) - 1] = '\0';
@@ -108,6 +109,7 @@ void parse_file ( char * filename, struct matrix * transform,
 
       add_circle(pm, atof(points[0]), atof(points[1]), atof(points[2]), 1000);
     }
+    //hermite
     else if (strcmp(line, "hermite") == 0) {
       fgets(line, 255, f);
       line[strlen(line) - 1] = '\0';
@@ -124,6 +126,7 @@ void parse_file ( char * filename, struct matrix * transform,
       
       add_curve(pm, atof(points[0]), atof(points[1]), atof(points[2]), atof(points[3]), atof(points[4]), atof(points[5]), atof(points[6]), atof(points[7]), 100, HERMITE_MODE);
     }
+    //bezier
     else if (strcmp(line, "bezier") == 0) {
       fgets(line, 255, f);
       line[strlen(line) - 1] = '\0';
